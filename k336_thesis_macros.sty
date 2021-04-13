@@ -63,17 +63,6 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%A list of user hyphenations.
-\input{hyphen.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ceske uvozovky
-\chardef\clqq=18 \sfcode18=0
-\chardef\crqq=16 \sfcode16=0
-\def\uv#1{\clqq#1\crqq}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\acknowledgements}{
 \cleardoublepage
 \vspace*{\fill}
@@ -118,27 +107,6 @@ I declare that I elaborated this thesis on my own and that I mentioned all the i
 \def\@openbib@code{\addcontentsline{toc}{chapter}{\bibname}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% upravuje výpis seznamu zkratek
-\makeatletter							
-\renewcommand{\thenomenclature}{%
-  \@ifundefined{chapter}%
-  {
-    \section{\nomname}
-   }%
-  {
-    \chapter{\nomname}
-  }%
-
-  \nompreamble
-  \list{}{%
-    \labelwidth\nom@tempdim
-    \leftmargin\labelwidth
-    \advance\leftmargin\labelsep
-    \itemsep\nomitemsep
-    \let\makelabel\nomlabel}}
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % výpis typu práce
 
 \def \translate{
@@ -158,7 +126,6 @@ I declare that I elaborated this thesis on my own and that I mentioned all the i
 		 \newcommand\labelSupervisor{Vedoucí práce}
 		 \newcommand\labelStudProgram{Studijní program}
 		 \newcommand\labelStudBranch{Obor}
-		 \renewcommand\nomname{Seznam použitých zkratek}
 	}{
 		 \typeout{************************************************}
 		 \typeout{Language: english}
